@@ -1,12 +1,11 @@
-import Vue from 'vue'
+import { createApp } from 'vue';
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import Icon from '@/components/Icon'
 
-Vue.config.productionTip = false
+import 'normalize.css'
+const app = createApp(App)
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+app.component('icon', Icon)
+app.use(router).use(store).mount('#app')
